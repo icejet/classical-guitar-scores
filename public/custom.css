@@ -1,0 +1,25 @@
+.warning {
+  width: 100%;
+  padding: 5px;
+  margin: 20px;
+  background: #FFE5ED;
+  color: #903;
+  border: 1px solid #903;
+}
+.notice {
+  width: 100%;
+  padding: 5px;
+  margin: 20px;
+  background: #CBFFD7;
+  color: #009824;
+  border: 1px solid #009824;
+}
+.files {
+  padding-left: 2em;
+  background-color: #eee;
+  margin-bottom: 15px;
+
+}
+.strong {
+  font-size: 125%;
+}
