@@ -1,0 +1,21 @@
+doctype html
+html lang="en"
+  head
+    title="Signage Controller"
+    meta name="viewport" content="width=device-width, initial-scale=1"
+    meta charset="utf-8"
+    link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic"
+    link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css"
+    link rel="stylesheet" href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css"
+  body
+    div class="container"
+      section
+        == styled_flash
+      header class="row"
+        section class="column"
+          h2 Composers
+        section class="column"
+          a href="/" Composers 
+      div class="row"
+        section class="column"
+          == yield
