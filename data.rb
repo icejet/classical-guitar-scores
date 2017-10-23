@@ -27,4 +27,5 @@ class Score
   property :notes, Text
   belongs_to :composer
 end
+DataMapper.auto_migrate!
 DataMapper.finalize
