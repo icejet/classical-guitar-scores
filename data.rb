@@ -7,7 +7,7 @@ class Composer
   include DataMapper::Resource
 
   property :id, Serial
-  proptery :last_name, String
+  property :last_name, String
   property :first_name, String
   property :biography_link, String
   property :period, String
