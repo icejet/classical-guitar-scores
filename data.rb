@@ -25,6 +25,9 @@ class Score
   property :difficulty, String
   property :rcm_grade, String
   property :notes, Text
+  property :time_signature, String
+  property :main_key, String
+  property :tempo, String
   belongs_to :composer
 end
 DataMapper.auto_migrate!
