@@ -16,5 +16,5 @@ end
 
 post '/composer' do
   Composer.create(params[:composer])
-  redirect_to('/')
+  redirect to('/')
 end
