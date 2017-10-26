@@ -3,7 +3,7 @@ p Welcome to composers page
 - if @composers.any?
   ul
   - @composers.each do |composer|
-    li #{ composer.last_name + ", " + composer.last_name }
+    li <a href="/composer/#{composer.id}" >#{ composer.last_name + ", " + composer.first_name }</a>
 
 - else
   p No composers found. <a href="/composer/new">Add one</a>

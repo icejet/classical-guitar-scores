@@ -1,0 +1,11 @@
+h4 #{@composer.first_name + " " + @composer.last_name}
+p Major Period: #{@composer.period}
+p Scores:
+- if @composer.scores.any?
+  ul
+  - @composer.scores.each do |score|
+    li #{score.title}
+
+- else
+  p No scores listed yet.
+

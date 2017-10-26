@@ -5,6 +5,10 @@ require 'sinatra/flash'
 require_relative './data.rb'
 
 get '/' do
+  redirect to('/composer')
+end
+
+get '/composer' do
   @composers = Composer.all
   slim :composers
 end
@@ -12,6 +16,11 @@ end
 get '/composer/new' do
   @composer = Composer.new
   slim :new_composer
+end
+
+get '/composer/:id' do
+  @composer = Composer.get(params[:id])
+  slim :composer_details
 end
 
 post '/composer' do
