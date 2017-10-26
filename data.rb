@@ -30,5 +30,5 @@ class Score
   property :tempo, String
   belongs_to :composer
 end
-DataMapper.auto_migrate!
+# DataMapper.auto_migrate!
 DataMapper.finalize

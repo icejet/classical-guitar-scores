@@ -1,1 +1,9 @@
 p Welcome to composers page
+
+- if @composers.any?
+  ul
+  - @composers.each do |composer|
+    li #{ composer.last_name, ", " + composer.last_name }
+
+- else
+  p No composers found.  In the future I will render the add composer form here.
