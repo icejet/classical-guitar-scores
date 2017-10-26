@@ -1,0 +1,15 @@
+label for = "first_name" First Name
+input#first_name type="text" name="composer[first_name]" value="#{@composer.first_name}"
+label for = "last_name" Last Name
+input#last_name type="text" name="composer[last_name]" value="#{@composer.last_name}"
+label for = "period" Period
+<select id="period" name="composer[period]">
+  <option value="Renaissance">Renaissance</option>
+  <option value="Baroque">Baroque</option>
+  <option value="Classical">Classical</option>
+  <option value="Romantic">Romantic</option>
+  <option value="Modern">Modern</option>
+</select>
+label for = "biography_link" Biography Link
+input#biography_link type="text" name="composer[biography_link]" value="#{@composer.biography_link}"
+input type="submit" value="Save"

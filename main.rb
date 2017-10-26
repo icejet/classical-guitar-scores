@@ -8,3 +8,8 @@ get '/' do
   @composers = Composer.all
   slim :composers
 end
+
+get '/composer/new' do
+  @composer = Composer.new
+  slim :new_composer
+end
