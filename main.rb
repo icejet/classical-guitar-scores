@@ -18,12 +18,28 @@ get '/composer/new' do
   slim :new_composer
 end
 
-get '/composer/:id' do
+get '/composer/edit/:id' do
   @composer = Composer.get(params[:id])
-  slim :composer_details
+  slim :edit_composer
 end
 
 post '/composer' do
   Composer.create(params[:composer])
   redirect to('/')
+end
+
+get '/composer/score/new' do
+  @composer = Composer.new  
+  slim :new_score
+end
+
+put '/composer/:id' do
+  @composer = Composer.get(params[:id])
+  @composer.update(params[:composer])
+  redirect to("/composer/#{@composer.id}")
+end
+
+get '/composer/:id' do
+  @composer = Composer.get(params[:id])
+  slim :composer_details
 end
