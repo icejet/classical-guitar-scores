@@ -1,1 +1,35 @@
 h4 #{@score.title} - #{@composer.last_name}
+table#score
+  tr
+    th Difficulty
+    td #{@score.difficulty}
+  tr
+    th RCM Grade
+    td #{@score.rcm_grade}
+  tr
+    th Key
+    td #{@score.main_key}
+  tr
+    th Time Signature
+    td #{@score.time_signature}
+  tr
+    th Tempo
+    td #{@score.tempo}
+  tr
+    th Description
+    td #{@score.description}
+  tr
+    th Performance Notes
+    td #{@score.notes}
+  tr
+    th Performance
+    - if @score.performance_link.size > 0
+      td <a href="#{@score.performance_link}">Watch</a>
+    - else
+      td N/A
+  tr
+    th Download
+    - if @score.pdf_link.size > 0
+      td <a href="#{@score.pdf_link}">Download Score</a>
+    - else
+      td N/A
