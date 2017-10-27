@@ -11,6 +11,7 @@ class Composer
   property :first_name, String
   property :biography_link, String
   property :period, String
+  property :country, String
   has n, :scores
 end
 

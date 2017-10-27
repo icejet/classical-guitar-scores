@@ -1,4 +1,5 @@
 h4 #{@composer.first_name + " " + @composer.last_name} <span class="small">(<a href="/composer/edit/#{@composer.id}">Edit</a>)</span>
+p <strong>Country:</strong> #{@composer.country}
 p <strong>Major Period:</strong> #{@composer.period}
 -if @composer.biography_link
   p <strong>Biography:</strong> <a href="#{@composer.biography_link}"> #{@composer.biography_link} </a>
