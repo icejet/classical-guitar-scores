@@ -2,7 +2,7 @@ h4 #{@composer.first_name + " " + @composer.last_name} <span class="small">(<a h
 p <strong>Country:</strong> #{@composer.country}
 p <strong>Major Period:</strong> #{@composer.period}
 -if @composer.biography_link
-  p <strong>Biography:</strong> <a href="#{@composer.biography_link}"> #{@composer.biography_link} </a>
+  p <strong>Biography:</strong> <a href="#{@composer.biography_link}" target="_blank"> #{@composer.biography_link} </a>
 
 hr
 
@@ -29,8 +29,14 @@ p <strong>Scores:</strong>
         td #{score.main_key}
         td #{score.time_signature}
         td #{score.tempo}
-        td #{score.performance_link}
-        td #{score.pdf_link}
+        - if score.performance_link.size > 0 
+          td <a href="#{score.performance_link}" target="_blank">Watch</a>
+        - else
+          td N/A
+        - if score.pdf_link.size > 0
+          td <a href="#{score.pdf_link}" target="_blank">Download</a>
+        - else
+          td N/A
         td <a href="/composer/#{@composer.id}/score/#{score.id}">All details</a>
 
 - else

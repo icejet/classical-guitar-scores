@@ -15,3 +15,5 @@ label for = "period" Period
 label for = "biography_link" Biography Link
 input#biography_link type="text" name="composer[biography_link]" value="#{@composer.biography_link}"
 input type="submit" value="Save"
+br
+a href="/composer/#{@composer.id}" class="button button-outline" Cancel

@@ -26,3 +26,7 @@
 .small {
   font-size: 50%;
 }
+
+.right-margin {
+  margin-right: 10px;
+}

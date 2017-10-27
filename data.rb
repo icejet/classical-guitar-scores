@@ -29,7 +29,7 @@ class Score
   property :time_signature, String
   property :main_key, String
   property :tempo, String
+  property :source_book, String
   belongs_to :composer
 end
-# DataMapper.auto_migrate!
 DataMapper.finalize

@@ -1,4 +1,4 @@
-h4 #{@score.title} - #{@composer.last_name}
+h4 #{@score.title} - #{@composer.last_name} (<a href="/score/#{@score.id}">Edit</a>)
 table#score
   tr
     th Difficulty
@@ -16,6 +16,9 @@ table#score
     th Tempo
     td #{@score.tempo}
   tr
+    th Source Book
+    td #{@score.source_book}
+  tr
     th Description
     td #{@score.description}
   tr
@@ -24,12 +27,14 @@ table#score
   tr
     th Performance
     - if @score.performance_link.size > 0
-      td <a href="#{@score.performance_link}">Watch</a>
+      td <a href="#{@score.performance_link}" target="_blank">Watch</a>
     - else
       td N/A
   tr
     th Download
     - if @score.pdf_link.size > 0
-      td <a href="#{@score.pdf_link}">Download Score</a>
+      td <a href="#{@score.pdf_link}" target="_blank">Download Score</a>
     - else
       td N/A
+
+a href="/composer/#{@composer.id}" Back

@@ -9,7 +9,7 @@ get '/' do
 end
 
 get '/composer' do
-  @composers = Composer.all
+  @composers = Composer.all(:order => [:last_name.asc, :first_name.asc])
   slim :composers
 end
 
@@ -30,6 +30,7 @@ end
 
 get '/composer/:id/score/new' do
   @composer = Composer.get(params[:id])
+  @score = Score.new
   slim :new_score
 end
 
@@ -44,6 +45,17 @@ get '/composer/:id/score/:score_id' do
   @composer = Composer.get(params[:id])
   @score = Score.get(params[:score_id])
   slim :score_details
+end
+
+get '/score/:id' do
+  @score = Score.get(params[:id])
+  slim :edit_score
+end
+
+put '/score/:id' do
+  @score = Score.get(params[:id])
+  @score.update(params[:score])
+  redirect to("/composer/#{@score.composer_id}/score/#{@score.id}")
 end
 
 put '/composer/:id' do

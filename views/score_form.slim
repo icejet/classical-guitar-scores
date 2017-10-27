@@ -1,31 +1,34 @@
 label for = "title" Title
-input#title type="text" name="score[title]"
-
-label for = "description" Description
-input#description type="text" name="score[description]"
-
-label for = "performance_link" Performance
-input#performance_link type="text" name="score[performance_link]"
-
-label for = "pdf_link" Score Link
-input#pdf_link type="text" name="score[pdf_link]"
-
-label for = "difficulty" Difficulty
-input#difficulty type="text" name="score[difficulty]"
-
-label for = "rmc_grade" RCM Grade
-input#rmc_grade type="text" name="score[rcm_grade]"
-
-label for = "notes" Performance Notes
-input#notes type="text" name="score[notes]"
+input#title type="text" name="score[title]" value="#{@score.title}"
 
 label for = "time_signature" Time Signature
-input#time_signature type="text" name="score[time_signature]"
+input#time_signature type="text" name="score[time_signature]" value="#{@score.time_signature}"
 
 label for = "main_key" Key Signature
-input#main_key type="text" name="score[main_key]"
+input#main_key type="text" name="score[main_key]" value="#{@score.main_key}"
 
 label for = "tempo" Tempo
-input#tempo type="text" name="score[tempo]"
+input#tempo type="text" name="score[tempo]" value="#{@score.tempo}"
+
+label for = "difficulty" Difficulty
+input#difficulty type="text" name="score[difficulty]" value="#{@score.difficulty}"
+
+label for = "rmc_grade" RCM Grade
+input#rmc_grade type="text" name="score[rcm_grade]" value="#{@score.rcm_grade}"
+
+label for = "performance_link" Performance
+input#performance_link type="text" name="score[performance_link]" value="#{@score.performance_link}"
+
+label for = "pdf_link" Score Link
+input#pdf_link type="text" name="score[pdf_link]" value="#{@score.pdf_link}"
+
+label for = "source_book" Source Book
+input#source_book type="text" name="score[source_book]" value="#{@score.source_book}"
+
+label for = "description" Description
+input#description type="text" name="score[description]" value="#{@score.description}"
+
+label for = "notes" Performance Notes
+input#notes type = "text" name="score[notes]" value="#{@score.notes}"
 
 input type="submit" value="Save"

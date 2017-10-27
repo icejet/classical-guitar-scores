@@ -1,0 +1,3 @@
+form method="POST" action="/score/#{@score.id}"
+  input type="hidden" name="_method" value = "PUT"
+  == slim :score_form
