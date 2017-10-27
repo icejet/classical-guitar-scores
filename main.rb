@@ -28,9 +28,16 @@ post '/composer' do
   redirect to('/')
 end
 
-get '/composer/score/new' do
-  @composer = Composer.new  
+get '/composer/:id/score/new' do
+  @composer = Composer.get(params[:id])
   slim :new_score
+end
+
+post '/composer/:id/score' do
+  @composer = Composer.get(params[:id])
+  @composer.scores.push(Score.new(params[:score]))
+  @composer.save
+  redirect to("/composer/#{@composer.id}")
 end
 
 put '/composer/:id' do
