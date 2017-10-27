@@ -40,6 +40,12 @@ post '/composer/:id/score' do
   redirect to("/composer/#{@composer.id}")
 end
 
+get '/composer/:id/score/:score_id' do
+  @composer = Composer.get(params[:id])
+  @score = Score.get(params[:score_id])
+  slim :score_details
+end
+
 put '/composer/:id' do
   @composer = Composer.get(params[:id])
   @composer.update(params[:composer])

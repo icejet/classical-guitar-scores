@@ -1,16 +1,38 @@
-h4 #{@composer.first_name + " " + @composer.last_name}
+h4 #{@composer.first_name + " " + @composer.last_name} <span class="small">(<a href="/composer/edit/#{@composer.id}">Edit</a>)</span>
 p <strong>Major Period:</strong> #{@composer.period}
 -if @composer.biography_link
   p <strong>Biography:</strong> <a href="#{@composer.biography_link}"> #{@composer.biography_link} </a>
 
-a href="/composer/edit/#{@composer.id}"Edit Composer Details
+hr
 
 p <strong>Scores:</strong>
 - if @composer.scores.any?
-  ul
-  - @composer.scores.each do |score|
-    li #{score.title}
+  table#scores
+    thead
+      tr
+        th Title
+        th Difficulty
+        th RCM Grade
+        th Key
+        th Time Signature
+        th Tempo
+        th Performance
+        th Score
+        td Details
+    tbody
+    - @composer.scores.each do |score|
+      tr
+        td #{score.title}
+        td #{score.difficulty}
+        td #{score.rcm_grade}
+        td #{score.main_key}
+        td #{score.time_signature}
+        td #{score.tempo}
+        td #{score.performance_link}
+        td #{score.pdf_link}
+        td <a href="/composer/#{@composer.id}/score/#{score.id}">All details</a>
 
 - else
   p No scores listed yet.
 
+p <a href="/composer/#{@composer.id}/score/new">Add a score</a>
