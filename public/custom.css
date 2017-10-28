@@ -32,3 +32,10 @@
 .small {
   font-size: 70%;
 }
+li {
+  list-style-type: none;
+  display: block;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  margin-left: 20px;
+}

@@ -11,10 +11,76 @@ label for = "tempo" Tempo
 input#tempo type="text" name="score[tempo]" value="#{@score.tempo}"
 
 label for = "difficulty" Difficulty
-input#difficulty type="text" name="score[difficulty]" value="#{@score.difficulty}"
+<select id="difficulty" name="score[difficulty]">
+  - if @score.difficulty == "Beginner"
+    <option selected value="Beginner">Beginner</option>
+  - else
+    <option value="Beginner">Beginner</option>
+  - if @score.difficulty == "Easy"
+    <option selected value="Easy">Easy</option>
+  - else
+    <option value="Easy">Easy</option>
+  - if @score.difficulty == "Intermediate"
+    <option selected value="Intermediate">Intermediate</option>
+  -else
+    <option value="Intermediate">Intermediate</option>
+  - if @score.difficulty == "Advanced"
+    <option selected value="Advanced">Advanced</option>
+  - else
+    <option value="Advanced">Advanced</option>
+  - if @score.difficulty == "Virtuoso"
+    <option selected value="Virtuoso">Virtuoso</option>
+  - else
+    <option value="Virtuoso">Virtuoso</option>
+</select>
 
-label for = "rmc_grade" RCM Grade
-input#rmc_grade type="text" name="score[rcm_grade]" value="#{@score.rcm_grade}"
+label for = "rcm_grade" RCM Grade
+<select id="rcm_grade" name="score[rcm_grade]">
+  - if @score.rcm_grade.size < 1
+    <option selected value="">N/A</option>
+  - else
+    <option value="">N/A</option>
+  - if @score.rcm_grade == "Prep"
+    <option selected value="Prep">Prep</option>
+  - else
+    <option value="Prep">Prep</option>
+  - if @score.rcm_grade == "Grade 1"
+    <option selected value="Grade 1">Grade 1</option>
+  - else
+    <option value="Grade 1">Grade 1</option>
+  - if @score.rcm_grade == "Grade 2"
+    <option selected value="Grade 2">Grade 2</option>
+  - else
+    <option value="Grade 2">Grade 2</option>
+  - if @score.rcm_grade == "Grade 3"
+    <option selected value="Grade 3">Grade 3</option>
+  - else
+    <option value="Grade 3">Grade 3</option>
+  - if @score.rcm_grade == "Grade 4"
+    <option selected value="Grade 4">Grade 4</option>
+  - else
+    <option value="Grade 4">Grade 4</option>
+  - if @score.rcm_grade == "Grade 5"
+    <option selected value="Grade 5">Grade 5</option>
+  - else
+    <option value="Grade 1">Grade 5</option>
+  - if @score.rcm_grade == "Grade 6"
+    <option selected value="Grade 6">Grade 6</option>
+  - else
+    <option value="Grade 6">Grade 6</option>
+  - if @score.rcm_grade == "Grade 7"
+    <option selected value="Grade 7">Grade 7</option>
+  - else
+    <option value="Grade 7">Grade 7</option>
+  - if @score.rcm_grade == "Grade 8"
+    <option selected value="Grade 8">Grade 8</option>
+  - else
+    <option value="Grade 8">Grade 8</option>
+  - if @score.rcm_grade == "Grade 9"
+    <option selected value="Grade 9">Grade 9</option>
+  - else
+    <option value="Grade 9">Grade 9</option>
+</select>
 
 label for = "performance_link" Performance
 input#performance_link type="text" name="score[performance_link]" value="#{@score.performance_link}"
