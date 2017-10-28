@@ -23,10 +23,12 @@
 .strong {
   font-size: 125%;
 }
-.small {
-  font-size: 50%;
+.pad-top {
+  margin-top: 15px;
 }
-
-.right-margin {
-  margin-right: 10px;
+.nav-pad {
+  margin-top: 30px;
+}
+.small {
+  font-size: 70%;
 }
