@@ -36,8 +36,11 @@ label for = "difficulty" Difficulty
 
 label for = "rcm_grade" RCM Grade
 <select id="rcm_grade" name="score[rcm_grade]">
-  - if @score.rcm_grade.size < 1
-    <option selected value="">N/A</option>
+  - if @score.rcm_grade
+    - if @score.rcm_grade.size < 1 
+      <option selected value="">N/A</option>
+    - else
+      <option value="">N/A</option>
   - else
     <option value="">N/A</option>
   - if @score.rcm_grade == "Prep"

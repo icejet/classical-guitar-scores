@@ -6,11 +6,26 @@ label for = "country" Country
 input#country type="text" name="composer[country]" vale="#{@composer.country}"
 label for = "period" Period
 <select id="period" name="composer[period]">
-  <option value="Renaissance">Renaissance</option>
-  <option value="Baroque">Baroque</option>
-  <option value="Classical">Classical</option>
-  <option value="Romantic">Romantic</option>
-  <option value="Modern">Modern</option>
+  - if @composer.period == "Renaissance"
+    <option selected value="Renaissance">Renaissance</option>
+  - else
+    <option value="Renaissance">Renaissance</option>
+  - if @composer.period == "Baroque"
+    <option selected value="Baroque">Baroque</option>
+  - else
+    <option value="Baroque">Baroque</option>
+  - if @composer.period == "Classical"
+    <option selected value="Classical">Classical</option>
+  - else
+    <option value="Classical">Classical</option>
+  - if @composer.period == "Romantic"
+    <option selected value="Romantic">Romantic</option>
+  - else
+    <option value="Romantic">Romantic</option>
+  - if @composer.period == "Modern"
+    <option selected value="Modern">Modern</option>
+  - else
+    <option value="Modern">Modern</option>
 </select>
 label for = "biography_link" Biography Link
 input#biography_link type="text" name="composer[biography_link]" value="#{@composer.biography_link}"
