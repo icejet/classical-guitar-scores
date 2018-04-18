@@ -3,9 +3,11 @@ input#first_name type="text" name="composer[first_name]" value="#{@composer.firs
 label for = "last_name" Last Name
 input#last_name type="text" name="composer[last_name]" value="#{@composer.last_name}"
 label for = "country" Country
-input#country type="text" name="composer[country]" vale="#{@composer.country}"
+input#country type="text" name="composer[country]" value="#{@composer.country}"
 label for = "period" Period
 <select id="period" name="composer[period]">
+  - if @composer.period.size < 1
+    <option selected value="NA">N/A</option>
   - if @composer.period == "Renaissance"
     <option selected value="Renaissance">Renaissance</option>
   - else
