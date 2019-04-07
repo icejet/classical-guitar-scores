@@ -4,7 +4,7 @@ An application to help me keep track of classical guitar composers and scores fo
 
 ### What is this repository for? ###
 
-A simple Sinatra app that links to a SQLite3 database that will help me keep track of classical guitar composers and scores for my upcoming college studies.
+A simple Sinatra app that links to a SQLite3 database that will help me keep track of classical guitar composers and scores.
 
 ### How do I get set up? ###
 
